@@ -14,12 +14,13 @@ const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchKeyword, setSearchKeyword] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     if (selectedImage) {
-      document.body.classList.add('modal-open');
+      setModalOpen(true);
     } else {
-      document.body.classList.remove('modal-open');
+      setModalOpen(false);
     }
   }, [selectedImage]);
 
