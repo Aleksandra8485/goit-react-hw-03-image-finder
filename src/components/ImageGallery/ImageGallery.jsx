@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
+import styles from './ImageGallery.module.css';
 
 const ImageGallery = ({ images, openModal }) => {
   const handleItemClick = (imageUrl, alt) => {
@@ -7,9 +8,9 @@ const ImageGallery = ({ images, openModal }) => {
   };
 
   return (
-    <ul className="gallery">
+    <ul className={styles.imageGallery}>
       {images.map(image => (
-        <li key={image.id} className="gallery-item">
+        <li key={image.id} className={styles.imageGalleryItem}>
           <ImageGalleryItem
             imageUrl={image.webformatURL}
             alt={image.alt}

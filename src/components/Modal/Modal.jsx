@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import styles from './Modal.module.css';
 
 const Modal = ({ imageUrl, alt, onClose }) => {
   useEffect(() => {
@@ -21,8 +22,8 @@ const Modal = ({ imageUrl, alt, onClose }) => {
   };
 
   return (
-    <div className="overlay" onClick={onClose}>
-      <div className="modal">
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal}>
         <img src={imageUrl} alt={alt} onClick={openLightbox} />
       </div>
     </div>
