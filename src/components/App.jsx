@@ -5,6 +5,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import CustomLoader from './Loader/Loader';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
+import styles from './App.module.css';
 
 const API_KEY = '36335087-8fc82f57bcc883baed7c9a06e';
 
@@ -14,13 +15,19 @@ const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchKeyword, setSearchKeyword] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
+
+  // useEffect(() => {
+  //   if (selectedImage) {
+  //     setModalOpen(true);
+  //   } else {
+  //     setModalOpen(false);
+  //   }
+  // }, [selectedImage]);
 
   useEffect(() => {
     if (selectedImage) {
-      setModalOpen(true);
-    } else {
-      setModalOpen(false);
+      console.log('Wybrany obraz:', selectedImage);
     }
   }, [selectedImage]);
 
@@ -65,7 +72,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Searchbar onSubmit={searchImages} />
 
       {loading ? (
