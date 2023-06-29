@@ -6,7 +6,7 @@ import CustomLoader from './Loader/Loader';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import styles from './App.module.css';
-import fetchImages from './Api/Api';
+import fetchImages from '../utils/api';
 
 const App = () => {
   const [images, setImages] = useState([]);
