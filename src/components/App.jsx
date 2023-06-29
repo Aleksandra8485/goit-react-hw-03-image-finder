@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import CustomLoader from './Loader/Loader';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import styles from './App.module.css';
-
-const API_KEY = '36335087-8fc82f57bcc883baed7c9a06e';
-
-const fetchImages = async (keyword, page = 1) => {
-  const response = await axios.get(
-    `https://pixabay.com/api/?q=${keyword}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-  );
-  return response.data.hits;
-};
+import fetchImages from './Api/Api';
 
 const App = () => {
   const [images, setImages] = useState([]);
